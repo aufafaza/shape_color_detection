@@ -13,19 +13,20 @@ int main(){
 	if (!cap.isOpened()){
 		return -1; 
 	} 
-	Detect filter, filter2; 
-	cv::Mat frame, redMask, blueMask; 
+	Detect filter; 
+	cv::Mat frame, redMask, blueMask, shape; 
 
 	while (true) { 
 		cap >> frame; 
 		if (frame.empty()) break; 
 
 		redMask = filter.colorDetect(frame); 
-		blueMask = filter2.colorDetectBlue(frame);
+		blueMask = filter.colorDetectBlue(frame);
+		shape = filter.shapeDetect(blueMask, frame); 
 		imshow("Original", frame); 
 		imshow("red mask", redMask);
 		imshow("blue mask", blueMask); 
-		
+		imshow("shape detect", shape); 	
 		if (waitKey(1) == 'q') break; 
 	}
 

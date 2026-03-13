@@ -12,7 +12,7 @@ class Detect {
 		cv::Mat colorDetect(cv::Mat bgr);
 		cv::Mat colorDetectBlue(cv::Mat bgr); 
 
-		void shapeDetect(cv::Mat imgDil, cv::Mat img);
+		cv::Mat shapeDetect(cv::Mat mask, cv::Mat originalFrame);
 		bool isValid(); 
 		
 }; 
