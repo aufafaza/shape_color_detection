@@ -78,7 +78,8 @@ int Detect::shapeDetect(Mat mask, Mat originalFrame){
 				label = "NOT DESIRED SHAPE with AREA: " + to_string(area) + " found edges: " + to_string(edges); 
 				break; 
 		}
-			
+		// TODO: use bounding boxes for visualization sake 
+		// maybe also modularize this because this function is kind of bloated
 		drawContours( originalFrame, contours, (int) i, Scalar(0, 255, 0), 2, LINE_8, hierarchy, 0);
 		putText(originalFrame, label, approx[0], FONT_HERSHEY_SIMPLEX, 0.8, Scalar(0, 255, 0), 2); 
 	}
