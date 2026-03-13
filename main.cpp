@@ -14,7 +14,8 @@ int main(){
 		return -1; 
 	} 
 	Detect filter; 
-	cv::Mat frame, redMask, blueMask, shape; 
+	cv::Mat frame, redMask, blueMask;
+	int shape;
 
 	while (true) { 
 		cap >> frame; 
@@ -26,7 +27,6 @@ int main(){
 		imshow("Original", frame); 
 		imshow("red mask", redMask);
 		imshow("blue mask", blueMask); 
-		imshow("shape detect", shape); 	
 		if (waitKey(1) == 'q') break; 
 	}
 
