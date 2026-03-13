@@ -5,9 +5,9 @@ using namespace std;
 using namespace cv;
 
 
-Detect::Detect() : rect(false), blue(false), red(false)  {} 
+Detect::Detect() : rect(false)  {} 
 
-Detect::Detect(cv::VideoCapture v)  : v(v), rect(false), blue(false), red(false) {}; 
+Detect::Detect(cv::VideoCapture v)  : v(v), rect(false){}; 
 
 Detect::~Detect() = default; 
 

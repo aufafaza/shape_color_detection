@@ -3,8 +3,6 @@ class Detect {
 	private:
 		cv::VideoCapture v; 
 		bool rect; 
-		bool blue;
-		bool red; 
 	public: 
 		Detect(); 
 		Detect(cv::VideoCapture v); 
